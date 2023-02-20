@@ -1,0 +1,26 @@
+name: BuildAndDeploy
+
+on:
+  push:
+
+jobs:
+    builds:
+     runs-on: windows-latest
+     env:
+      name: "dotnet Build"
+      ref-name: ${{github.ref}}
+      
+     steps:
+       - name: list
+         run: ls
+       - name: checkout-Repo
+         uses: actions/checkout@v3.3.0
+       - name: Setup .NET Core SDK
+        # uses: actions/setup-dotnet@v3.0.3
+         run: ech "hello world"
+         continue-on-error: true
+       - name: list
+         run: ls
+       - name: Create issue if the build is failed
+         if: failure()
+         run: echo $name
