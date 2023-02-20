@@ -14,8 +14,7 @@ jobs:
        - name: checkout-Repo
          uses: actions/checkout@v3.3.0
        - name: Setup .NET Core SDK
-        # uses: actions/setup-dotnet@v3.0.3
-         run: echo "hello world"
+         uses: actions/setup-dotnet@v3.0.3
        - name: list
          run: ls
        - name: Create issue if the build is failed
