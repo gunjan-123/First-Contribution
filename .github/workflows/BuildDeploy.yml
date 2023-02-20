@@ -18,7 +18,7 @@ jobs:
        - name: Setup .NET Core SDK
         # uses: actions/setup-dotnet@v3.0.3
          run: ech "hello world"
-         continue-on-error: true
+         
        - name: list
          run: ls
        - name: Create issue if the build is failed
