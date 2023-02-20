@@ -1,7 +1,7 @@
 name: BuildAndDeploy
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
     builds:
