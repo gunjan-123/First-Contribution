@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-    builds:
+    
+    deployment:
      runs-on: windows-latest
      env:
       name: "dotnet Build"
