@@ -5,7 +5,7 @@ on:
 
 jobs:
     
-    deployment:
+    build:
      runs-on: windows-latest
      env:
       name: "dotnet Build"
@@ -21,3 +21,10 @@ jobs:
        - name: Create issue if the build is failed
          if: failure()
          run: echo $name
+    deployment:
+     runs-on: windows-latest
+     steps:
+      - name: deploy
+        uses: ./.github/actions/deploy
+      - name: list
+        run: ls
