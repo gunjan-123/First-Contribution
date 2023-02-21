@@ -25,6 +25,6 @@ jobs:
      runs-on: windows-latest
      steps:
       - name: deploy
-        uses: ./.github/actions/deploy
+        uses: github/branch-deploy@v4.3.0
       - name: list
         run: ls
