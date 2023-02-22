@@ -6,7 +6,8 @@ on:
 jobs:
     
     use-build:
-     uses: First-Contribution/.github/workflows/BuildDeploy.yml
+     name: Location
+     uses: ./.github/workflows/BuildDeploy.yml
     deploy:
      needs: use-build
      runs-on: windows-latest
