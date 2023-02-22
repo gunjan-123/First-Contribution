@@ -6,7 +6,7 @@ on:
 jobs:
     
     use-build:
-     uses: <owner>/<repo>/.github/workflows/BuildDeploy.yml@main
+     uses: <owner>/<repo>/First-Contribution/.github/workflows/BuildDeploy.yml@main
     deploy:
      needs: use-build
      runs-on: windows-latest
