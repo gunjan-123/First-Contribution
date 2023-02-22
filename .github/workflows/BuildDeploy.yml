@@ -5,26 +5,15 @@ on:
 
 jobs:
     
-    build:
-     runs-on: windows-latest
-     env:
-      name: "dotnet Build"
-      ref-name: ${{github.ref}}
-      
-     steps:
-       - name: checkout-Repo
-         uses: actions/checkout@v3.3.0
-       - name: Setup .NET Core SDK
-         uses: actions/setup-dotnet@v3.0.3
-       - name: list
-         run: ls
-       - name: Create issue if the build is failed
-         if: failure()
-         run: echo $name
-    deployment:
+    use-build:
+     uses: <owner>/<repo>/.github/workflows/BuildDeploy.yml@main
+    deploy:
+     needs: use-build
      runs-on: windows-latest
      steps:
-      - name: deploy
-        uses: github/branch-deploy@v4.3.0
-      - name: list
-        run: ls
+      - name: Download use-build artifact
+        # https://github.com/actions/download-artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: <the name>
+          path: <the path>
